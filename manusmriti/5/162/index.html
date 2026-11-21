@@ -5,31 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manusmṛti 5.162 · Pothī</title>
 <meta name="description" content="नान्योत्पन्ना प्रजास्तीह न चाप्यन्यपरिग्रहे न द्वितीयश्च साध्वीनां क्व चिद्भर्तोपदिश्यते">
+<link rel="canonical" href="https://jalkarna.me/manusmriti/5/162/">
 <link rel="preload" href="/assets/fonts/tiro-sanskrit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
+<script>try{var L=JSON.parse(localStorage.getItem("pothi.layers")||"null");if(L)document.documentElement.dataset.layers=Object.keys(L).filter(function(k){return L[k]}).join(" ")}catch(e){}</script>
 </head>
-<body class="reader" data-route="/manusmriti/5/162/">
+<body class="reader" data-slug="manusmriti" data-route="/manusmriti/5/162/">
 <a class="skip" href="#pane">Skip to the text</a>
 <div class="app">
   <header class="bar">
-    <a class="mark" href="/" title="Library"><span lang="sa">पोथी</span><span>Pothī</span></a>
-    <nav class="crumbs" id="crumbs" aria-label="Location"></nav>
-    <form class="find" id="find-bar" role="search"><input type="search" id="q-bar" placeholder="Search, or go to 2.164" aria-label="Search the text, or go to a verse like 2.164" autocomplete="off"></form>
+    <a class="mark" href="/" title="Pothī library"><span lang="sa">पोथी</span><span>Pothī</span></a>
+    <a class="bar-text" id="bar-text" href="/manusmriti/"></a>
+    <div class="switch">
+      <button class="switch-btn" id="switch-btn" aria-haspopup="true" aria-expanded="false" aria-controls="switch-pop"><span id="switch-label"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+      <div class="switch-pop" id="switch-pop" hidden><ol id="switch-list"></ol></div>
+    </div>
+    <nav class="steps" aria-label="Previous and next">
+      <a class="step" id="prev" aria-label="Previous"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="step" id="next" aria-label="Next"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </nav>
+    <form class="find" id="find-bar" role="search"><input type="search" id="q-bar" placeholder="Search, or go to 2.164" aria-label="Search this text, or go to a verse" autocomplete="off"></form>
+    <div class="layers" role="group" aria-label="Show layers" id="layers-bar"></div>
     <button class="menu" id="menu" aria-controls="side" aria-expanded="false">Contents</button>
   </header>
 
   <aside class="side" id="side" aria-label="Contents">
     <span class="side-grip"></span>
     <div class="side-scroll">
-      <form class="find" id="find-side" role="search"><input type="search" id="q-side" placeholder="Search, or go to 2.164" aria-label="Search the text, or go to a verse like 2.164" autocomplete="off"></form>
+      <div class="side-tools">
+        <form class="find" id="find-side" role="search"><input type="search" id="q-side" placeholder="Search, or go to 2.164" aria-label="Search this text, or go to a verse" autocomplete="off"></form>
+        <div class="layers" role="group" aria-label="Show layers" id="layers-side"></div>
+      </div>
       <section id="results-wrap" hidden><h2 id="results-h">Results</h2><ul class="results" id="results"></ul></section>
       <section id="nav-wrap">
-        <h2>Adhyāyas</h2>
+        <h2 id="chapters-h"></h2>
         <ol class="chapters" id="chapters"></ol>
-        <section id="verses-wrap" hidden><h2 id="verses-h">Ślokas</h2><nav class="grid" id="verses" aria-label="Ślokas"></nav></section>
-        <h2>This text</h2>
+        <section id="verses-wrap" hidden><h2 id="verses-h"></h2><nav class="grid" id="verses"></nav></section>
+        <h2>Sources</h2>
         <div class="meta" id="meta"></div>
       </section>
     </div>

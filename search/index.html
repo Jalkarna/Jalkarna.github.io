@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Search · Pothī</title>
+<meta name="description" content="Search every text in the library.">
+<link rel="canonical" href="https://jalkarna.me/search/">
+<link rel="preload" href="/assets/fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/tiro-sanskrit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <a class="mark" href="/"><span lang="sa">पोथी</span><span>Pothī</span></a>
+  <nav class="site-nav" aria-label="Sections"><a href="/library/">Library</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav>
+  <form class="site-find" action="/search/" role="search">
+    <input type="search" name="q" placeholder="Search the library" aria-label="Search the library" autocomplete="off">
+  </form>
+</header>
+<main id="main" class="site-main">
+<header class="page-head"><h1>Search</h1></header>
+<form action="/search/" role="search" class="big-find" id="search-form">
+  <input type="search" name="q" id="search-q" placeholder="Search titles, verses and translations" aria-label="Search titles, verses and translations" autocomplete="off">
+  <button type="submit">Search</button>
+</form>
+<p class="stats" id="search-status" aria-live="polite"></p>
+<div id="search-results"></div>
+</main>
+<footer class="site-foot">
+  <div class="foot-cols">
+    <section>
+      <h2>Library</h2>
+      <ul><li><a href="/library/dharmasastra/">Dharmaśāstra</a> <span>1</span></li><li><a href="/library/upanisad/">Upaniṣad</a> <span>0</span></li><li><a href="/library/itihasa/">Itihāsa</a> <span>0</span></li><li><a href="/library/purana/">Purāṇa</a> <span>0</span></li><li><a href="/library/stotra/">Stotra</a> <span>0</span></li><li><a href="/articles/">Articles</a> <span>0</span></li></ul>
+    </section>
+    <section>
+      <h2>Pothī</h2>
+      <ul>
+        <li><a href="/about/">About the library</a></li>
+        <li><a href="/about/#editing">How texts are edited</a></li>
+        <li><a href="/about/#licensing">Licensing</a></li>
+        <li><a href="/search/">Search</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <p>Corrections, missing credits, or a text you would like to read here: <a href="https://github.com/Jalkarna/Jalkarna.github.io/issues">GitHub issues</a>.</p>
+    </section>
+  </div>
+  <p class="foot-line"><span lang="sa">पोथी</span> Pothī · jalkarna.me</p>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
