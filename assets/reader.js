@@ -8,7 +8,7 @@
   const fmt = (s) => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
   const pane = $("pane"), page = $("page"), audio = $("audio"), player = $("player");
   const cache = {};
-  let meta = null, current = null, route = { ch: null, v: null }, spyVerse = null, followUntil = 0, userScrollAt = 0;
+  let meta = null, current = null, route = { ch: null, v: null }, spyVerse = null, pinned = null, followUntil = 0, userScrollAt = 0;
 
   const get = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); });
   const chapterData = (n) => (cache[n] ||= get(BASE + "/data/" + String(n).padStart(2, "0") + ".json"));
@@ -140,7 +140,10 @@
       await renderChapter(r.ch);
       loadAudio();
       if (r.v && !$("v" + r.v)) { renderMissing("Śloka " + r.ch + "." + r.v); nav(); return; }
+      pinned = r.v || null;
+      clearTimeout(spyTimer);
       if (r.v) {
+        spyVerse = r.v;
         const el = scrollToVerse(r.v, same);
         page.querySelectorAll(".is-target").forEach((x) => x.classList.remove("is-target"));
         el.classList.add("is-target");
@@ -166,7 +169,7 @@
   /* scrollspy: the verse at the reading line becomes the current one */
   let spyTimer = 0;
   function spy() {
-    if (!current) return;
+    if (!current || pinned) return;
     const line = pane.getBoundingClientRect().top + 48;
     let v = null;
     for (const el of page.querySelectorAll(".verse")) {
@@ -185,6 +188,12 @@
       route.v = v;
     }, 500);
   }
+  const unpin = () => { pinned = null; };
+  ["wheel", "touchstart", "pointerdown"].forEach((t) => pane.addEventListener(t, unpin, { passive: true }));
+  addEventListener("keydown", unpin);
+  const reanchor = () => { if (pinned) scrollToVerse(pinned, false); };
+  document.fonts.ready.then(reanchor);
+  addEventListener("resize", reanchor);
   pane.addEventListener("scroll", () => { if (Date.now() > followUntil) userScrollAt = Date.now(); requestAnimationFrame(spy); }, { passive: true });
 
   /* ── search and jump ───────────────────────────────────── */
@@ -323,7 +332,7 @@
     });
   }
   function loop() { paint(); if (!audio.paused) raf = requestAnimationFrame(loop); }
-  audio.addEventListener("play", () => { $("pp-icon").setAttribute("d", "M4 2.5h3v11H4zM9 2.5h3v11H9z"); $("pp").setAttribute("aria-label", "Pause recitation"); cancelAnimationFrame(raf); loop(); });
+  audio.addEventListener("play", () => { unpin(); $("pp-icon").setAttribute("d", "M4 2.5h3v11H4zM9 2.5h3v11H9z"); $("pp").setAttribute("aria-label", "Pause recitation"); cancelAnimationFrame(raf); loop(); });
   audio.addEventListener("pause", () => { $("pp-icon").setAttribute("d", "M4 2.5v11l9.5-5.5z"); $("pp").setAttribute("aria-label", "Play recitation"); paint(); });
   audio.addEventListener("ended", () => { if (activeVerse) activeVerse.classList.remove("is-playing"); activeVerse = null; });
   audio.addEventListener("loadedmetadata", () => { $("t-dur").textContent = fmt(audio.duration); });
