@@ -1,0 +1,121 @@
+{
+ "slug": "manusmriti",
+ "title": "मनुस्मृतिः",
+ "title_iast": "Manusmṛti",
+ "verses": 2684,
+ "chapters": [
+  {
+   "n": 1,
+   "title": "प्रथमोऽध्यायः",
+   "title_iast": "prathamo'dhyāyaḥ",
+   "count": 119,
+   "revision": 414628,
+   "audio": {
+    "verses": [
+     1,
+     2
+    ],
+    "duration": 20.3
+   }
+  },
+  {
+   "n": 2,
+   "title": "द्वितीयोऽध्यायः",
+   "title_iast": "dvitīyo'dhyāyaḥ",
+   "count": 249,
+   "revision": 415079,
+   "audio": null
+  },
+  {
+   "n": 3,
+   "title": "तृतीयोऽध्यायः",
+   "title_iast": "tṛtīyo'dhyāyaḥ",
+   "count": 286,
+   "revision": 415119,
+   "audio": null
+  },
+  {
+   "n": 4,
+   "title": "चतुर्थोऽध्यायः",
+   "title_iast": "caturtho'dhyāyaḥ",
+   "count": 260,
+   "revision": 415472,
+   "audio": null
+  },
+  {
+   "n": 5,
+   "title": "पञ्चमोऽध्यायः",
+   "title_iast": "pañcamo'dhyāyaḥ",
+   "count": 169,
+   "revision": 41893,
+   "audio": null
+  },
+  {
+   "n": 6,
+   "title": "षष्ठोऽध्यायः",
+   "title_iast": "ṣaṣṭho'dhyāyaḥ",
+   "count": 97,
+   "revision": 41894,
+   "audio": null
+  },
+  {
+   "n": 7,
+   "title": "सप्तमोऽध्यायः",
+   "title_iast": "saptamo'dhyāyaḥ",
+   "count": 226,
+   "revision": 41895,
+   "audio": null
+  },
+  {
+   "n": 8,
+   "title": "अष्टमोऽध्यायः",
+   "title_iast": "aṣṭamo'dhyāyaḥ",
+   "count": 420,
+   "revision": 41896,
+   "audio": null
+  },
+  {
+   "n": 9,
+   "title": "नवमोऽध्यायः",
+   "title_iast": "navamo'dhyāyaḥ",
+   "count": 336,
+   "revision": 415192,
+   "audio": null
+  },
+  {
+   "n": 10,
+   "title": "दशमोऽध्यायः",
+   "title_iast": "daśamo'dhyāyaḥ",
+   "count": 131,
+   "revision": 41898,
+   "audio": null
+  },
+  {
+   "n": 11,
+   "title": "एकादशोऽध्यायः",
+   "title_iast": "ekādaśo'dhyāyaḥ",
+   "count": 265,
+   "revision": 41899,
+   "audio": null
+  },
+  {
+   "n": 12,
+   "title": "द्वादशोऽध्यायः",
+   "title_iast": "dvādaśo'dhyāyaḥ",
+   "count": 126,
+   "revision": 417813,
+   "audio": {
+    "verses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "duration": 61.9
+   }
+  }
+ ],
+ "film": "/manusmriti/film/sample.mp4"
+}
